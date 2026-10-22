@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>DesignMonks Blog Cover Studio</title>
+<link rel="stylesheet" href="css/fonts.css">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+
+<div class="wrap">
+<header>
+  <div>
+    <h1>DesignMonks Blog <em>Cover Studio</em></h1>
+    <p>Drop in the hero render, type the title, and export the blog hero, thumbnail and story at 2x, plus an HTML file for Figma.</p>
+  </div>
+  <div class="row">
+    <button class="primary" id="dlAll" type="button">Download all (.zip)</button>
+  </div>
+</header>
+
+<div class="grid">
+<aside class="rail" aria-label="Cover settings">
+  <div class="field">
+    <span class="lbl">Hero image <span class="sample-tag" id="sampleTag">Sample</span></span>
+    <label class="drop" id="drop" tabindex="0">
+      <img id="heroThumb" alt="">
+      <div><b id="heroName">fintech-hero.png</b><span>Drop a transparent PNG or click to choose</span></div>
+      <input type="file" id="heroFile" accept="image/png,image/webp" hidden>
+    </label>
+    <div class="warn" id="heroWarn" hidden></div>
+  </div>
+
+  <div class="field">
+    <label for="title">Title</label>
+    <textarea id="title" rows="3">Fintech UX: Trends, Tips &amp; Examples</textarea>
+    <div class="emph-head"><span class="lbl">Italic emphasis</span>
+      <div class="seg" role="group" aria-label="Italic emphasis mode">
+        <button type="button" id="modeAuto" aria-pressed="true">Auto</button><button type="button" id="modeManual" aria-pressed="false">Manual</button>
+      </div></div>
+    <div class="emph" id="emphBox">
+      <div><b id="emphPhrase"></b><small id="emphSrc"></small></div>
+      <button class="ghost" id="emphAsk" type="button">Ask Claude</button>
+    </div>
+    <div class="chips" id="chips" hidden role="group" aria-label="Title words. Select the words to set in italic."></div>
+    <p class="hint" id="emphHint">Auto picks the words for Playfair italic. Switch to Manual to choose them yourself. Press Enter in the title to force a line break.</p>
+  </div>
+
+  <div class="field">
+    <label for="thumbTitle">Thumbnail title (optional)</label>
+    <input type="text" id="thumbTitle" placeholder="Shorter version, e.g. drop “7 Best”">
+  </div>
+
+  <div class="field">
+    <span class="lbl">Background, matched to the hero</span>
+    <div class="swatches" id="swatches" role="group" aria-label="Colors found in the hero"></div>
+    <div class="colors">
+      <label class="cpick"><input type="color" id="cBase" aria-label="Background color"><div><small>Base</small><span id="cBaseHex"></span></div></label>
+      <label class="cpick"><input type="color" id="cShade" aria-label="Shade color"><div><small>Shade</small><span id="cShadeHex"></span></div></label>
+    </div>
+    <p class="contrast" id="contrast"></p>
+    <p class="hint">Colors come from the hero render. Override only if the art director asks for a specific value.</p>
+  </div>
+
+  <div class="field">
+    <label for="cta">Story button</label>
+    <input type="text" id="cta" value="Read Full Blog">
+  </div>
+
+  <div class="field">
+    <label for="slug">File name</label>
+    <input type="text" id="slug" value="fintech-ux-trends-tips-examples">
+  </div>
+
+  <div class="status" id="status" role="status" aria-live="polite"></div>
+</aside>
+
+<section class="sheet" aria-label="Previews">
+  <div class="fmt" data-k="wide">
+    <div class="fmt-head"><h2>Blog hero<small>1252 × 438</small></h2>
+      <div class="row"><button class="ghost" data-reset="wide" type="button">Reset</button><button data-dl="wide" type="button">PNG</button></div></div>
+    <div class="stage"><canvas id="cv-wide" aria-label="Blog hero preview. Drag to move the hero."></canvas></div>
+    <div class="adj"><span>Drag the hero to move it.</span><label>Hero size <input type="range" min="60" max="160" value="100" data-scale="wide" id="hs-wide"> <output data-out="wide">100%</output></label><label>Title size <input type="range" min="60" max="150" value="100" data-text="wide" id="ts-wide"> <output data-tout="wide"></output></label></div>
+  </div>
+  <div class="pair">
+    <div class="fmt" data-k="thumb">
+      <div class="fmt-head"><h2>Thumbnail<small>610 × 350</small></h2>
+        <div class="row"><button class="ghost" data-reset="thumb" type="button">Reset</button><button data-dl="thumb" type="button">PNG</button></div></div>
+      <div class="stage"><canvas id="cv-thumb" aria-label="Thumbnail preview. Drag to move the hero."></canvas></div>
+      <div class="adj"><label>Hero size <input type="range" min="60" max="160" value="100" data-scale="thumb" id="hs-thumb"> <output data-out="thumb">100%</output></label><label>Title size <input type="range" min="60" max="150" value="100" data-text="thumb" id="ts-thumb"> <output data-tout="thumb"></output></label></div>
+    </div>
+    <div class="fmt tall" data-k="tall">
+      <div class="fmt-head"><h2>Story<small>1080 × 1920</small></h2>
+        <div class="row"><button class="ghost" data-reset="tall" type="button">Reset</button><button data-dl="tall" type="button">PNG</button></div></div>
+      <div class="stage"><canvas id="cv-tall" aria-label="Story preview. Drag to move the hero."></canvas></div>
+      <div class="adj"><label>Hero size <input type="range" min="60" max="160" value="100" data-scale="tall" id="hs-tall"> <output data-out="tall">100%</output></label><label>Title size <input type="range" min="60" max="150" value="100" data-text="tall" id="ts-tall"> <output data-tout="tall"></output></label></div>
+    </div>
+  </div>
+</section>
+</div>
+</div>
+
+<script src="js/vendor/jszip.min.js"></script>
+<script src="js/embedded-assets.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>

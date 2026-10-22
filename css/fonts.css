@@ -1,0 +1,6 @@
+/* Self-hosted fonts (woff2, extracted from the original single-file build) */
+@font-face{font-family:"Red Hat Display";font-style:normal;font-weight:400;font-display:block;src:url("../assets/fonts/red-hat-display-400.woff2") format("woff2")}
+@font-face{font-family:"Red Hat Display";font-style:normal;font-weight:500;font-display:block;src:url("../assets/fonts/red-hat-display-500.woff2") format("woff2")}
+@font-face{font-family:"Red Hat Display";font-style:normal;font-weight:600;font-display:block;src:url("../assets/fonts/red-hat-display-600.woff2") format("woff2")}
+@font-face{font-family:"Red Hat Display";font-style:normal;font-weight:700;font-display:block;src:url("../assets/fonts/red-hat-display-700.woff2") format("woff2")}
+@font-face{font-family:"Playfair Display";font-style:italic;font-weight:700;font-display:block;src:url("../assets/fonts/playfair-display-italic-700.woff2") format("woff2")}
