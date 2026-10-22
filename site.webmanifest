@@ -1,0 +1,13 @@
+{
+  "name": "DM Blog Studio",
+  "short_name": "Blog Studio",
+  "description": "Blog cover maker by DesignMonks",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#F3F2F7",
+  "theme_color": "#5B21F5",
+  "icons": [
+    { "src": "assets/icons/favicon-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "assets/icons/favicon.svg", "sizes": "any", "type": "image/svg+xml" }
+  ]
+}
