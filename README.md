@@ -56,7 +56,7 @@ python3 tools/build-embedded.py
 
 ## Link previews
 
-The Open Graph and Twitter tags in `index.html` point at `https://designmonks.github.io/DM-Blog-Studio/`, the GitHub Pages address. Link previews need that absolute URL, so update the `og:url`, `og:image`, `twitter:image` and `canonical` values if the site moves to another domain.
+The Open Graph and Twitter tags in `index.html` point at `https://designmonks-llc.github.io/dm-blog-studio/`, the GitHub Pages address. Link previews need that absolute URL, so update the `og:url`, `og:image`, `twitter:image` and `canonical` values if the site moves to another domain.
 
 ## Template values
 
